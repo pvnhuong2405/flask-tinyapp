@@ -1,7 +1,7 @@
 # Thông tin cá nhân
 
 Pham Thi Ngoc Huong
-20065491
+
 
 # Mô tả project
 
@@ -57,6 +57,13 @@ Use Case Diagram - Website Chia Sẻ Kiến Thức Về Chó Mèo
 - Use Cases:
   - Chuyển trang khi xem danh sách bài viết
   - Giới hạn số bài viết hiển thị trên mỗi trang
+# V6: Tương tác bài viết
+- Actors:
+  - Registered User
+- Use Cases:
+  - Viết bình luận cho bài viết
+  - Xem bình luận của bài viết
+  - Thích (like) bài viết
 
 # Hướng dẫn cài đặt, chạy
 
