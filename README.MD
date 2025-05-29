@@ -69,4 +69,5 @@ Use Case Diagram - Website Chia Sẻ Kiến Thức Về Chó Mèo
 
 # Link project đã triển khai
 
-- deploy bằng render:
+- deploy bằng render: https://flask-tinyapp-eju1.onrender.com 
+- Khi deploy bằng render thì ảnh sẽ bị mất 
