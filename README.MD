@@ -64,7 +64,7 @@ Use Case Diagram - Website Chia Sẻ Kiến Thức Về Chó Mèo
   - Viết bình luận cho bài viết
   - Xem bình luận của bài viết
   - Thích (like) bài viết
-# Giao diện từng trang 
+
 
 # Hướng dẫn cài đặt, chạy
 
