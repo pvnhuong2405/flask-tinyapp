@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static', filename ='./css/admin.css')}}" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <div class="admin-container">
+      <h1><br>Xin chào Admin</h1>
+      <button onclick="logout()">Đăng xuất</button>
+
+
+      <div class="btn-group">
+        <button class="btn">Xoá user</button>
+        <button class="btn">Sửa user</button>
+        <button type="button", class="btn">Đổi mật khẩu user</button>
+        <button id="view-log-btn" class="btn">Xem lịch sử thay đổi</button>
+        <button id="manage-posts-btn" class="btn">Quản lý bài viết</button>
+
+        
+      </div>
+      <div class="page-left">
+        <table id="customers">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="user-table">
+            <!--Dữ liệu user sẽ được thêm vào đây bằng JS -->
+          </tbody>
+      </div>
+      </table>
+    </div>
+
+    <script src="{{url_for('static', filename='js/admin.js')}}"></script>
+    <script src="{{url_for('static', filename='js/qly.js')}}"></script>
+  </body>
+</html>

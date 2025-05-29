@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/register.css') }}"
+    />
+    <title>Đăng ký</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Đăng ký</h2>
+      <input
+        type="email"
+        id="newUser"
+        placeholder="Nhập email"
+        required
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        title="Email không hợp lệ!"
+      />
+      <br />
+      <input
+        type="password"
+        id="newPassword"
+        placeholder="Nhập mật khẩu"
+        required
+        minlength="4"
+      />
+      <br />
+      <button id="registerBtn" onclick="registerUser()">Đăng ký</button>
+
+      <p id="message" style="color: red"></p>
+    </div>
+    <script>
+      function registerUser() {
+        let email = document.getElementById("newUser").value.trim();
+        let password = document.getElementById("newPassword").value.trim();
+        let messageElem = document.getElementById("message");
+        let registerBtn = document.getElementById("registerBtn");
+
+        if (!email || !password) {
+          messageElem.innerText = "Vui lòng nhập đầy đủ thông tin!";
+          messageElem.style.color = "red";
+          return;
+        }
+        if (password.length < 4) {
+          messageElem.innerText = "Mật khẩu phải có ít nhất 4 ký tự!";
+          messageElem.style.color = "red";
+          return;
+        }
+
+        registerBtn.disabled = true; // Vô hiệu hóa nút để tránh spam
+
+        fetch("/api/auth/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              messageElem.style.color = "green";
+              messageElem.innerText = "Đăng ký thành công! Chuyển hướng...";
+              setTimeout(() => (window.location.href = "/login"), 2000);
+            } else {
+              messageElem.innerText = data.message;
+              messageElem.style.color = "red";
+              registerBtn.disabled = false; // Cho phép đăng ký lại nếu lỗi
+            }
+          })
+          .catch(() => {
+            messageElem.innerText = "Lỗi kết nối đến máy chủ!";
+            messageElem.style.color = "red";
+            registerBtn.disabled = false;
+          });
+      }
+    </script>
+  </body>
+</html>

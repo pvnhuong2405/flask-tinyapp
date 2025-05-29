@@ -1,0 +1,42 @@
+#post-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  padding: 10px;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+#post-list::-webkit-scrollbar {
+  display: none;
+}
+
+.post-item {
+  margin-top: 100px;
+  height: 250px;
+  /*border: 1px solid #ccc;*/
+  padding: 10px;
+  /*border-radius: 5px;*/
+  scroll-snap-align: start;
+  /*background-color: #f6f0f0;*/
+  position: relative; /* Để chồng chữ lên ảnh */
+  min-width: 200px; /* Thu nhỏ block */
+  max-width: 200px; /* Giới hạn chiều rộng */
+
+  z-index: 2; /* Đưa block lên trên ảnh */
+}
+.post-item {
+  word-wrap: break-word; /* Bẻ từ dài nếu cần */
+  overflow-wrap: break-word; /*chữ xuống dòng */
+  white-space: normal; /* Cho phép xuống dòng */
+}
+.post-item h3,
+.post-item p {
+  position: relative; /* Chữ nằm trên ảnh */
+  z-index: 2; /* Đảm bảo chữ trên ảnh */
+  margin: 0;
+  background: #f6f0f0; /* Làm mờ nền để dễ đọc chữ */
+  padding: 5px;
+  border-radius: 5px;
+}

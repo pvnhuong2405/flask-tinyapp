@@ -1,0 +1,140 @@
+/* Đặt nền và màu chữ cho toàn bộ trang */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Phần container chính */
+.container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề của trang */
+h1 {
+  text-align: center;
+  color: #4CAF50;
+}
+
+/* Nút quay lại Admin */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: block;
+  margin: 10px auto;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Định dạng bảng */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+td {
+  background-color: #fafafa;
+}
+
+tr:hover td {
+  background-color: #f1f1f1;
+}
+
+/* Nút phân trang nằm ngang */
+#pagination {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+#pagination button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+#pagination button:hover {
+  background-color: #45a049;
+}
+
+#pagination button.active {
+  background-color: #45a049;
+  font-weight: bold;
+}
+
+/* Các nút như "Duyệt bài", "Xóa" */
+button.toggle-status-btn,
+button.delete-btn {
+  background-color: #008CBA;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.toggle-status-btn:hover,
+button.delete-btn:hover {
+  background-color: #007bb5;
+}
+
+/* Các trường nhập cho số bài mỗi trang */
+input[type="number"] {
+  padding: 8px;
+  font-size: 16px;
+  width: 80px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* Thông báo lỗi hoặc trạng thái khi không có dữ liệu */
+.error-message {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  padding: 20px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}

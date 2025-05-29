@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng nhập</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/login.css') }}"
+    />
+  </head>
+  <body>
+    <div class="log_box">
+      <h2>Đăng nhập</h2>
+      <form onsubmit="event.preventDefault(); login();">
+        <input type="text" id="username" placeholder="Tên đăng nhập" required />
+        <br />
+        <input type="password" id="userpass" placeholder="Mật khẩu" required />
+        <br />
+        <button type="submit">Đăng nhập</button>
+      </form>
+      <p id="message"></p>
+    </div>
+
+    <script>
+      function login() {
+        let username = document.getElementById("username").value;
+        let userpass = document.getElementById("userpass").value;
+
+        fetch("/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: username, password: userpass }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              if (data.role === "admin") {
+                window.location.href = "/admin";
+              } else {
+                window.location.href = "/";
+              }
+            } else {
+              document.getElementById("message").innerText = data.message;
+            }
+          })
+          .catch((error) => console.error("Error logging in:", error));
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='images/icon.png') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+    <title>Pông Pet Log</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="left">
+        <ul>
+          <li>
+            <a class="navigationlist" href="{{ url_for('home_dangnhap') }}">
+              Home
+            </a>
+          </li>
+          <li>
+            <a class="navigation1" href="{{ url_for('post') }}">Post</a>
+          </li>
+          <li>
+            <a class="navigation2" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+          <input type="text" class="search-box" placeholder="Nhập từ khóa..." />
+          <button class="search-button">🔍</button>
+        </ul>
+      </div>
+      <div class="right">
+        <nav class="navbar">
+          <div class="logo"></div>
+          <div id="user-section"></div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="cont">
+        <div class="cont-left">
+          <img
+            src="{{ url_for('static', filename='images/bong.jpeg') }}"
+            alt="Hình ảnh thú cưng"
+            class="img"
+          />
+        </div>
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+  </body>
+</html>
